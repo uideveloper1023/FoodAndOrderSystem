@@ -3,8 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+
+// importing our studnet.route.js file
 var student = require('./routes/student.route')
 
+// creating express app
 var app = express();
 
 // view engine setup
@@ -17,6 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// assgning our route
 app.use('/',student);
 
 // catch 404 and forward to error handler
@@ -35,4 +39,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// exporting our app
 module.exports = app;

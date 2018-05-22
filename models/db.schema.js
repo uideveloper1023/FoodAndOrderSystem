@@ -9,5 +9,5 @@ var Schema = mongoose.model('miracle_collection', {
   phoneno: String
 });
 
-
+// exporting our schema
 module.exports.Schema=Schema;
